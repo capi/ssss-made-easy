@@ -3,7 +3,15 @@
 </script>
 
 <svelte:head>
-	<title>ssss - Easy Secret Sharing</title>
+	<title>Shamir's Secret Sharing Scheme Made Easy</title>
 </svelte:head>
 
-<slot />
+<!-- component -->
+<!--
+    Tailwind Play Link:
+    https://play.tailwindcss.com/Iq18cgjApI
+-->
+
+<div class="relative flex min-h-screen flex-col overflow-hidden bg-white dark:bg-black py-6 sm:py-12">
+	<slot />
+</div>
