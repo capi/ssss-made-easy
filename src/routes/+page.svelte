@@ -19,5 +19,9 @@
 			Combine a shared secret
 			<Arrow />
 		</RoundButton>
+		<RoundButton filled={false}>
+			Learn more
+			<Arrow />
+		</RoundButton>
 	</div>
 </div>
