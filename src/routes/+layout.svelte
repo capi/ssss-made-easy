@@ -12,6 +12,6 @@
     https://play.tailwindcss.com/Iq18cgjApI
 -->
 
-<div class="relative flex min-h-screen flex-col overflow-hidden bg-white dark:bg-black py-6 sm:py-12">
+<div class="relative flex min-h-screen mx-auto max-w-4xl min-w-4xl flex-col overflow-hidden bg-white dark:bg-black py-6 sm:py-12">
 	<slot />
 </div>
