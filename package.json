@@ -35,6 +35,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"ssss-js": "^1.1.0"
+		"@fortawesome/free-brands-svg-icons": "^6.2.0",
+		"@fortawesome/free-solid-svg-icons": "^6.2.0",
+		"ssss-js": "^1.1.0",
+		"svelte-fa": "^3.0.3"
 	}
 }

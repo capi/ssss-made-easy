@@ -2,7 +2,7 @@
 	import RoundButton from '$lib/RoundButton.svelte';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
 	import { splitSecret } from '$lib/ssss-util';
-	import SecretShare from './SecretShare.svelte';
+  import SharesSection from './SharesSection.svelte';
 
 	let secret: string = '';
 	let token: string = '';
@@ -106,9 +106,6 @@
 	</div>
 
 	{#if shares && shares.length > 0}
-		<h3 class="text-3xl font-bold mt-6 mb-3 mx-auto leading-tight text-white">Shares of the Secret</h3>
-		{#each shares as share}
-			<SecretShare {share} />
-		{/each}
+		<SharesSection shares="{shares}" />
 	{/if}
 </div>
