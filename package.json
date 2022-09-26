@@ -17,6 +17,7 @@
 		"@popperjs/core": "^2.11.6",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@types/qrcode": "^1.5.0",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"autoprefixer": "^10.4.11",
@@ -41,6 +42,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.2.0",
 		"@fortawesome/free-solid-svg-icons": "^6.2.0",
+		"qrcode": "^1.5.1",
 		"ssss-js": "^1.1.0",
 		"svelte-fa": "^3.0.3"
 	}

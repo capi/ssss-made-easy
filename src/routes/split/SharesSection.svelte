@@ -3,26 +3,24 @@
 	import Fa from 'svelte-fa';
 	import { faClone } from '@fortawesome/free-solid-svg-icons';
 	import { successToast, errorToast } from '$lib/toasts/toasts';
-  import SecretDisplay from '$lib/SecretDisplay.svelte';
+	import SecretDisplay from '$lib/SecretDisplay.svelte';
+	import { copyTextToClipboard } from '$lib/clipboard-utils';
 
 	export let shares: string[] = [];
 
 	function copyAll() {
-		try {
-			if (navigator.clipboard) {
-				navigator.clipboard.writeText(shares.join('\n'));
-				successToast("Copied", `Successfully copied ${shares.length} elements to the clipboard.`, 1500)
+		copyTextToClipboard(shares.join('\n'), (err) => {
+			if (err) {
+				errorToast('Could not copy', '' + err, 2000);
 			} else {
-				throw new Error('Your browser does not support the clipboard API.');
+				successToast('Copied', `Successfully copied ${shares.length} elements to the clipboard.`, 1500);
 			}
-		} catch (e) {
-			errorToast('Could not copy', '' + e, 2500);
-		}
+		});
 	}
 </script>
 
 <h3 class="text-3xl font-bold mt-6 mb-3 mx-auto leading-tight font-mono text-white">Shares of the Secret</h3>
 <RoundButton addClasses="mb-3" on:click={copyAll}><Fa icon={faClone} class="mx-2" />Copy all to clipboard</RoundButton>
 {#each shares as share}
-  <SecretDisplay secret={share} />
+	<SecretDisplay secret={share} />
 {/each}

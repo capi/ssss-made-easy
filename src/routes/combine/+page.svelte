@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { copyTextToClipboard } from '$lib/clipboard-utils';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
 	import RoundButton from '$lib/RoundButton.svelte';
-  import SecretDisplay from '$lib/SecretDisplay.svelte';
+	import SecretDisplay from '$lib/SecretDisplay.svelte';
 	import { combineSecret } from '$lib/ssss-util';
 	import { errorToast, successToast } from '$lib/toasts/toasts';
 
@@ -29,7 +30,7 @@
 
 	function onCombine() {
 		validate();
-		secret = "";
+		secret = '';
 		if (shares.length >= 2) {
 			try {
 				secret = combineSecret(shares);
@@ -40,8 +41,8 @@
 	}
 
 	function onClear() {
-		secret = "";
-		txtShares = "";
+		secret = '';
+		txtShares = '';
 	}
 
 	function onPaste() {
@@ -54,16 +55,13 @@
 	}
 
 	function onCopySecret() {
-		try {
-			if (navigator.clipboard) {
-				navigator.clipboard.writeText(secret);
-				successToast("Copied", `Successfully copied the secret to the clipboard.`, 1500)
+		copyTextToClipboard(secret, (err) => {
+			if (err) {
+				errorToast('Could not copy', '' + err, 2000);
 			} else {
-				throw new Error('Your browser does not support the clipboard API.');
+				successToast('Copied', `Copied the decoded secret to the clipboard`, 1500);
 			}
-		} catch (e) {
-			errorToast('Could not copy', '' + e, 2500);
-		}
+		});
 	}
 </script>
 
@@ -92,8 +90,8 @@
 		/>
 	</div>
 	<div class="mt-2 mb-5 text-xs">
-		If you supply <strong>too few <em>or</em> too many</strong> key shares, the reconstructed secret will be wrong. And there is no mathematical way to
-		know. (<a href="/about/" class="underline">Learn more</a>)
+		If you supply <strong>too few <em>or</em> too many</strong> key shares, the reconstructed secret will be wrong. And
+		there is no mathematical way to know. (<a href="/about/" class="underline">Learn more</a>)
 	</div>
 
 	{#if errorMessages.length > 0}
@@ -117,7 +115,7 @@
 
 	{#if secret.length > 0}
 		<h3 class="text-3xl font-bold mt-6 mb-3 mx-auto leading-tight text-white">Reconstructed secret</h3>
-		<SecretDisplay secret={secret} />
+		<SecretDisplay {secret} />
 
 		<div class="max-w-sm mt-6">
 			<RoundButton fullWidth={true} on:click={onCopySecret}>Copy to clipboard</RoundButton>
@@ -125,6 +123,5 @@
 		<div class="max-w-sm mt-2">
 			<RoundButton fullWidth={true} filled={false} on:click={onClear}>Clear</RoundButton>
 		</div>
-
-		{/if}
+	{/if}
 </div>
