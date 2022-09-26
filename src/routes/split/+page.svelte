@@ -2,6 +2,7 @@
 	import RoundButton from '$lib/RoundButton.svelte';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
 	import { splitSecret } from '$lib/ssss-util';
+
   import SharesSection from './SharesSection.svelte';
 
 	let secret: string = '';
