@@ -1,6 +1,7 @@
 <script lang="ts">
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
 	import RoundButton from '$lib/RoundButton.svelte';
+  import SecretDisplay from '$lib/SecretDisplay.svelte';
 	import { combineSecret } from '$lib/ssss-util';
 	import { errorToast, successToast } from '$lib/toasts/toasts';
 
@@ -116,9 +117,7 @@
 
 	{#if secret.length > 0}
 		<h3 class="text-3xl font-bold mt-6 mb-3 mx-auto leading-tight text-white">Reconstructed secret</h3>
-		<div class="px-2 py-2 m-1 bg-green-300 text-black select-all truncate font-mono text-ellipsis">
-			{secret}
-		</div>
+		<SecretDisplay secret={secret} />
 
 		<div class="max-w-sm mt-6">
 			<RoundButton fullWidth={true} on:click={onCopySecret}>Copy to clipboard</RoundButton>
