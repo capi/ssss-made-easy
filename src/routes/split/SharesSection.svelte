@@ -20,7 +20,7 @@
 	}
 </script>
 
-<h3 class="text-3xl font-bold mt-6 mb-3 mx-auto leading-tight text-white">Shares of the Secret</h3>
+<h3 class="text-3xl font-bold mt-6 mb-3 mx-auto leading-tight font-mono text-white">Shares of the Secret</h3>
 <RoundButton addClasses="mb-3" on:click={copyAll}><Fa icon={faClone} class="mx-2" />Copy all to clipboard</RoundButton>
 {#each shares as share}
 	<div class="px-2 py-2 m-1 bg-green-300 text-black select-all truncate text-ellipsis">
