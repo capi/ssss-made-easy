@@ -25,10 +25,14 @@ export function copyCanvasToClipboard(canvas: HTMLCanvasElement, callback: Clipb
 			callback('Clipboard API is only available from secure contexts (HTTPS or localhost).');
 		} else if (navigator.clipboard && typeof ClipboardItem != "undefined") {
 			canvas.toBlob(blob => {
-				const item = new ClipboardItem({ "image/png": blob });
-				navigator.clipboard.write([item]);
+				if (blob) {
+					const item = new ClipboardItem({ "image/png": blob });
+					navigator.clipboard.write([item]);
+					callback(null)
+				} else {
+					callback("Failed to convert canvas to image/png");
+				}
 			});
-			callback(null);
 		} else {
 			callback('Sorry, your browser does not support the Clipboard API for images.\n\nIf you are using Firefox, you can try enabling dom.events.asyncClipboard.clipboardItem preferences in about:config at your own risk.');
 		}
