@@ -13,7 +13,7 @@
 	$: if (canvas) renderValue(value);
 
 	function renderValue(value: string) {
-		QRCode.toCanvas(canvas, value, { width, margin }, function (error) {
+		QRCode.toCanvas(canvas, value, { width, margin, errorCorrectionLevel: "high" }, function (error) {
 			if (error) {
 				errorToast('Failed creating QR code', '' + error, 2000);
 				console.log(error);
