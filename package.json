@@ -42,6 +42,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.2.0",
 		"@fortawesome/free-solid-svg-icons": "^6.2.0",
+		"html5-qrcode": "^2.2.1",
 		"qrcode": "^1.5.1",
 		"ssss-js": "^1.1.0",
 		"svelte-fa": "^3.0.3"

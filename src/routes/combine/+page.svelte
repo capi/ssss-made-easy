@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { copyTextToClipboard } from '$lib/clipboard-utils';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
+	import QrCodeScanner from '$lib/QrCodeScanner.svelte';
 	import RoundButton from '$lib/RoundButton.svelte';
 	import SecretDisplay from '$lib/SecretDisplay.svelte';
 	import { combineSecret } from '$lib/ssss-util';
@@ -12,14 +13,24 @@
 	let secret = '';
 	let warningMessages: string[] = [];
 	let errorMessages: string[] = [];
+	let showQrCodeScanner = false;
 
 	$: shares = txtShares.split('\n').filter((s) => s.trim().length > 0);
+
+	function onScanQrCode() {
+		showQrCodeScanner = true;
+	}
+
+	function onQrScanSuccess(event: CustomEvent) {
+		if (txtShares.length > 0) txtShares += "\n";
+		txtShares += event.detail.decodedText;
+	}
 
 	function getValidationMessages() {
 		let result: string[] = [];
 		if (shares.length < 2) {
 			result.push('Need at least 2 key shares.');
-		} // if
+		}
 		return result;
 	}
 
@@ -83,6 +94,23 @@
 			placeholder="Enter one key share per line..."
 			bind:value={txtShares}
 		/>
+	</div>
+
+	<div class="max-w-sm mt-2">
+		<RoundButton fullWidth={true} on:click={onScanQrCode}>
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
+				/>
+			</svg>
+			Scan QR Code
+		</RoundButton>
+		{#if showQrCodeScanner}
+			<QrCodeScanner on:close={() => showQrCodeScanner = false} on:scanSuccess={onQrScanSuccess} />
+		{/if}
 	</div>
 
 	<div class="mt-5">
