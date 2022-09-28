@@ -13,7 +13,7 @@
 	</a>
 	to split secrets into multiple parts, where a certain number of shares is required to recover the secret.
 </p>
-<div class="mt-6 flex items-center justify-center gap-4">
+<div class="mt-6 flex flex-wrap items-center justify-center gap-4">
 	<a href="/split/">
 		<RoundButton>Split a secret <Arrow /></RoundButton>
 	</a>
