@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { copyTextToClipboard } from '$lib/clipboard-utils';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
+  import PageTitle from '$lib/PageTitle.svelte';
 	import QrCodeScanner from '$lib/QrCodeScanner.svelte';
 	import RoundButton from '$lib/RoundButton.svelte';
 	import SecretDisplay from '$lib/SecretDisplay.svelte';
@@ -76,7 +77,7 @@
 	}
 </script>
 
-<h2 class="text-5xl font-bold leading-tight text-white">Combine shares of a secret</h2>
+<PageTitle>Combine shares of a secret</PageTitle>
 
 <div class="text-white w-96 mx-auto mt-6 flex flex-col text-left">
 	<div class="p-5 bg-indigo-400 rounded-3xl">

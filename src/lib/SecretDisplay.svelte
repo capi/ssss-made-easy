@@ -20,11 +20,11 @@
 	}
 </script>
 
-<div class="rounded-2xl bg-green-300 px-2 py-2 m-1 text-black flex">
-	<div class="p-2 truncate font-mono text-ellipsis flex-grow select-all">
+<div class="sm:rounded-2xl rounded-lg bg-green-300 sm:px-2 px-1 sm:py-2 py-1 m-1 text-black flex">
+	<div class="sm:p-2 p-1 truncate font-mono text-ellipsis flex-grow select-all">
 		{secret}
 	</div>
-	<button class="p-2 bg-blue-500" title="Show QR Code" on:click={onShowQrCode}>
+	<button class="sm:p-2 p-1 bg-blue-500" title="Show QR Code" on:click={onShowQrCode}>
 		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 			<path
 				stroke-linecap="round"

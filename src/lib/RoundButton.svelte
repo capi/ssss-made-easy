@@ -13,7 +13,7 @@
 
 <button
 	on:click
-	class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-lg font-medium text-white {addClasses}"
+	class="flex items-center justify-center gap-2 md:rounded-full rounded-lg md:px-5 md:py-3 px-3 py-3 md:text-lg text-sm font-medium text-white {addClasses}"
 	class:bg-violet-500={isFilled()}
 	class:border={hasBorder()}
 	class:border-violet-500={!isFilled()}

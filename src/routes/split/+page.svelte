@@ -1,8 +1,9 @@
 <script lang="ts">
-	import RoundButton from '$lib/RoundButton.svelte';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
+	import RoundButton from '$lib/RoundButton.svelte';
 	import { splitSecret } from '$lib/ssss-util';
 
+  import PageTitle from '$lib/PageTitle.svelte';
   import SharesSection from './SharesSection.svelte';
 
 	let secret: string = '';
@@ -44,9 +45,9 @@
 	}
 </script>
 
-<h2 class="text-5xl font-bold leading-tight text-white">Split a secret</h2>
+<PageTitle class="text-5xl font-bold leading-tight text-white">Split a secret</PageTitle>
 
-<div class="text-white w-96 mx-auto mt-6 flex flex-col text-left">
+<div class="text-white sm:w-96 w-3/4 mx-auto mt-6 flex flex-col text-left">
 	<div class="mb-6 p-5 bg-indigo-400 rounded-3xl">
 		<LabelWithDescription
 			target="secret"
@@ -95,7 +96,7 @@
 	</div>
 
 	{#if validationMessages.length > 0}
-		<ul class="rounded-3xl px-10 py-5 mb-5 bg-yellow-100 text-black text-left list-disc list-outside">
+		<ul class="sm:rounded-3xl rounded-lg sm:px-10 px-10 sm:py-5 py-2 mb-5 bg-yellow-100 text-black text-left list-disc list-outside">
 			{#each validationMessages as msg}
 				<li>{msg}</li>
 			{/each}
