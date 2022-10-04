@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PageTitle from '$lib/PageTitle.svelte';
-	import version from '$lib/assets/version.txt?raw'
+	import version from '$lib/assets/version.txt?raw';
 </script>
 
 <PageTitle>What's it all about?</PageTitle>
@@ -60,8 +60,10 @@
 <div class="rounded-3xl p-5 bg-indigo-400 mt-5 text-base leading-relaxed text-white text-left">
 	<strong>Everything on this site is performed in the browser. No data about the secrets is sent to the server!</strong>
 </div>
+<!-- ssss-js / ssss-combine / ssss-split -->
 <div class="mt-10 text-sm leading-relaxed text-white text-left">
-	This site uses the <a href="https://www.npmjs.com/package/ssss-js" target="_blank" class="underline">
+	This site uses the
+	<a href="https://www.npmjs.com/package/ssss-js" target="_blank" class="underline">
 		<code>ssss-js</code>
 	</a>
 	package, which is released under GPLv3. It is mostly compatible with
@@ -78,6 +80,17 @@
 		class="underline">Homepage</a
 	>).
 </div>
+<!-- qrcode -->
+<div class="mt-1 text-sm leading-relaxed text-white text-left">
+	QR-Codes are generated locally with the
+	<a href="https://www.npmjs.com/package/qrcode" target="_blank" class="underline">qrcode</a> library.
+</div>
+<!-- html5-qrcode -->
+<div class="mt-1 text-sm leading-relaxed text-white text-left">
+	QR-Codes are scanned locally using the
+	<a href="https://www.npmjs.com/package/html5-qrcode" target="_blank" class="underline">html5-qrcode</a> library.
+</div>
+<!-- Build Info -->
 <div class="mt-10 text-sm leading-relaxed text-gray-400 text-left">
 	Build: {version}
 </div>
