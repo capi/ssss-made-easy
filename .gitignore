@@ -4,6 +4,7 @@
 /.svelte-kit
 /package
 /.local
+/.buildoverride
 .env
 .env.*
 !.env.example

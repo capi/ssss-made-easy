@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageTitle from '$lib/PageTitle.svelte';
+	import version from '$lib/assets/version.txt?raw'
 </script>
 
 <PageTitle>What's it all about?</PageTitle>
@@ -76,4 +77,7 @@
 		target="_blank"
 		class="underline">Homepage</a
 	>).
+</div>
+<div class="mt-10 text-sm leading-relaxed text-gray-400 text-left">
+	Build: {version}
 </div>

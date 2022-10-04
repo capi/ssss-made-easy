@@ -9,4 +9,6 @@
 	<NavItem title="Combine" target="/combine/" />
 	/
 	<NavItem title="About" target="/about/" />
+	/
+	<NavItem title="Contact" target="/contact/" />
 </div>
