@@ -1,18 +1,14 @@
-# create-svelte
+# ssss-made-easy
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Introduction
 
-## Creating a project
+This is a a frontend for [`ssss-js`][2], a JavaScript implementation of [Shamir's Secret Sharing Scheme][1].
+It provides some additional convenience features over the sample page provided by `ssss-js` itself.
 
-If you're seeing this, you've probably already done this step. Congrats!
+* Share secret shares via QR Code
+* Scan a QR code to enter a share for combination
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+All of this is performed locally in the browser, no data is sent to the server. It is as safe as your browser is (judge yourself!).
 
 ## Developing
 
@@ -36,3 +32,7 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+[1]: https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing
+[2]: https://www.npmjs.com/package/ssss-js
