@@ -1,6 +1,7 @@
 <script lang="ts">
-	import PageTitle from '$lib/PageTitle.svelte';
-	import version from '$lib/assets/version.txt?raw';
+	import CopyrightNotice from '$lib/CopyrightNotice.svelte';
+import LicenseAndBuild from '$lib/LicenseAndBuild.svelte';
+import PageTitle from '$lib/PageTitle.svelte';
 </script>
 
 <PageTitle>What's it all about?</PageTitle>
@@ -90,7 +91,8 @@
 	QR-Codes are scanned locally using the
 	<a href="https://www.npmjs.com/package/html5-qrcode" target="_blank" class="underline">html5-qrcode</a> library.
 </div>
-<!-- Build Info -->
-<div class="mt-10 text-sm leading-relaxed text-gray-400 text-left">
-	Build: {version}
+<div class="mt-3 text-sm leading-relaxed text-white text-left">
+	<LicenseAndBuild />
+	<hr class="my-5" />
+	<CopyrightNotice />
 </div>

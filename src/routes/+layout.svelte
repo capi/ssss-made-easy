@@ -1,6 +1,7 @@
 <script>
 	import Toasts from '$lib/toasts/Toasts.svelte';
 	import '../app.css';
+	import Footer from './Footer.svelte';
 	import NavBar from './NavBar.svelte';
 </script>
 
