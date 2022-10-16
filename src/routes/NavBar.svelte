@@ -1,14 +1,25 @@
 <script lang="ts">
-	import NavItem from "./NavItem.svelte"
+	import { Navbar, NavBrand, NavHamburger, NavUl } from 'flowbite-svelte';
+	import NavItem from './NavItem.svelte';
+
+	function isActive(pathname: string, path: string) {
+		if (path == '/') {
+			return pathname == path;
+		}
+		return pathname.indexOf(path) == 0;
+	}
 </script>
-<div class="rounded-3xl bg-[#092540] p-2 pl-6 mb-2 text-left text-white">
-	<NavItem title="Home" target="/" />
-	/
-	<NavItem title="Split" target="/split/" />
-	/
-	<NavItem title="Combine" target="/combine/" />
-	/
-	<NavItem title="About" target="/about/" />
-	/
-	<NavItem title="Contact" target="/contact/" />
-</div>
+
+<Navbar let:hidden let:toggle>
+	<NavBrand href="/">
+		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"> SSSS-made-easy </span>
+	</NavBrand>
+	<NavHamburger on:click={toggle} />
+	<NavUl {hidden}>
+		<NavItem href="/">Home</NavItem>
+		<NavItem href="/split/">Split</NavItem>
+		<NavItem href="/combine/">Combine</NavItem>
+		<NavItem href="/about/">About</NavItem>
+		<NavItem href="/contact/">Contact</NavItem>
+	</NavUl>
+</Navbar>
