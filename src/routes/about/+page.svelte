@@ -1,13 +1,18 @@
 <script lang="ts">
 	import CopyrightNotice from '$lib/CopyrightNotice.svelte';
-import LicenseAndBuild from '$lib/LicenseAndBuild.svelte';
-import PageTitle from '$lib/PageTitle.svelte';
+	import LicenseAndBuild from '$lib/LicenseAndBuild.svelte';
+	import PageTitle from '$lib/PageTitle.svelte';
 </script>
 
 <PageTitle>What's it all about?</PageTitle>
 
 <div class="mt-5 sm:text-xl text-base leading-relaxed text-white text-left">
-	<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing" class="underline" target="_blank">
+	<a
+		href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing"
+		class="underline"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
 		Shamir's Secret Sharing Scheme
 	</a>
 	is a proven mathematical algorithm to split a secret into several parts that can be distributed to multiple parties which
@@ -45,14 +50,14 @@ import PageTitle from '$lib/PageTitle.svelte';
 
 	<div class="rounded-3xl p-5 bg-indigo-400 text-base leading-relaxed text-white text-left">
 		A very interesting and funny explanation of Shamir's Secret Sharing Scheme is presented by the awesome
-		<a href="https://en.wikipedia.org/wiki/Matt_Parker" target="_blank" class="underline"
+		<a href="https://en.wikipedia.org/wiki/Matt_Parker" target="_blank" rel="noopener noreferrer" class="underline"
 			><strong>Matt Parker</strong></a
 		>
 		on his YouTube Channel
-		<a href="https://www.youtube.com/user/standupmaths" target="_blank" class="underline">
+		<a href="https://www.youtube.com/user/standupmaths" target="_blank" rel="noopener noreferrer" class="underline">
 			<strong>Stand-up Maths</strong></a
 		>, called
-		<a href="https://www.youtube.com/watch?v=K54ildEW9-Q" target="_blank" class="underline">
+		<a href="https://www.youtube.com/watch?v=K54ildEW9-Q" target="_blank" rel="noopener noreferrer" class="underline">
 			<strong>How to keep an open secret using mathematics</strong></a
 		>.
 		<div class="mt-2">Watch it. It's awesome.</div>
@@ -64,32 +69,35 @@ import PageTitle from '$lib/PageTitle.svelte';
 <!-- ssss-js / ssss-combine / ssss-split -->
 <div class="mt-10 text-sm leading-relaxed text-white text-left">
 	This site uses the
-	<a href="https://www.npmjs.com/package/ssss-js" target="_blank" class="underline">
+	<a href="https://www.npmjs.com/package/ssss-js" target="_blank" rel="noopener noreferrer" class="underline">
 		<code>ssss-js</code>
 	</a>
 	package, which is released under GPLv3. It is mostly compatible with
-	<a href="https://linux.die.net/man/1/ssss-split" target="_blank" class="underline">
+	<a href="https://linux.die.net/man/1/ssss-split" target="_blank" rel="noopener noreferrer" class="underline">
 		<code>ssss-split</code>
 	</a>
 	and
-	<a href="https://linux.die.net/man/1/ssss-combine" target="_blank" class="underline">
+	<a href="https://linux.die.net/man/1/ssss-combine" target="_blank" rel="noopener noreferrer" class="underline">
 		<code>ssss-combine</code>
 	</a>
 	commands for Linux, developed by B. Poettering (<a
 		href="http://point-at-infinity.org/ssss/"
 		target="_blank"
+		rel="noopener noreferrer"
 		class="underline">Homepage</a
 	>).
 </div>
 <!-- qrcode -->
 <div class="mt-1 text-sm leading-relaxed text-white text-left">
 	QR-Codes are generated locally with the
-	<a href="https://www.npmjs.com/package/qrcode" target="_blank" class="underline">qrcode</a> library.
+	<a href="https://www.npmjs.com/package/qrcode" target="_blank" rel="noopener noreferrer" class="underline">qrcode</a> library.
 </div>
 <!-- html5-qrcode -->
 <div class="mt-1 text-sm leading-relaxed text-white text-left">
 	QR-Codes are scanned locally using the
-	<a href="https://www.npmjs.com/package/html5-qrcode" target="_blank" class="underline">html5-qrcode</a> library.
+	<a href="https://www.npmjs.com/package/html5-qrcode" target="_blank" rel="noopener noreferrer" class="underline"
+		>html5-qrcode</a
+	> library.
 </div>
 <div class="mt-3 text-sm leading-relaxed text-white text-left">
 	<LicenseAndBuild />

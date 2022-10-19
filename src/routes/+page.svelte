@@ -4,11 +4,15 @@
 	import RoundButton from '$lib/RoundButton.svelte';
 </script>
 
-
 <PageTitle>Easily split secrets using Shamir's Secret Sharing Scheme</PageTitle>
 <p class="mt-5 sm:text-xl text-base leading-relaxed text-white">
 	Use
-	<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing" class="underline" target="_blank">
+	<a
+		href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing"
+		class="underline"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
 		Shamir's Secret Sharing Scheme
 	</a>
 	to split secrets into multiple parts, where a certain number of shares is required to recover the secret.
