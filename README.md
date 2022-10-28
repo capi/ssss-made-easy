@@ -12,6 +12,10 @@ All of this is performed locally in the browser, no data is sent to the server. 
 
 This project is released under the terms of the GNU GENERAL PUBLIC LICENSE Version 3 (GPLv3), since it's main dependency, `ssss-js` is also released under the terms of this license.
 
+## Try it out
+
+You can use the installation at https://ssss.dont-panic.cc/ that will run the latest release version.
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
