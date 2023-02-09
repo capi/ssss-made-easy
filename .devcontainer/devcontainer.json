@@ -7,7 +7,11 @@
 		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
 		// Append -bullseye or -buster to pin to an OS version.
 		// Use -bullseye variants on local arm64/Apple Silicon.
-		"args": { "VARIANT": "16-bullseye" }
+		"args": {
+			"VARIANT": "16-bullseye",
+			// workaround for Docker bug: https://github.com/microsoft/vscode-remote-release/issues/7958#issuecomment-1416777679
+			"BUILDKIT_INLINE_CACHE": "0"
+		 }
 	},
 
 	// Configure tool-specific properties.
