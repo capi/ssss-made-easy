@@ -31,7 +31,8 @@ RUN --mount=type=secret,id=npm_auth \
 # finally: build
 RUN npm install
 RUN npm run build
-RUN rm build/vite-manifest.json
+## ensure build/vite-manifest.json no longer exists
+RUN if [ -e build/vite-manifest.json ]; then exit 2; else exit 0; fi
 
 #######################
 
