@@ -25,7 +25,7 @@
 			<strong><em>shares</em></strong>).
 		</li>
 		<li>
-			You decide on the <em>how many parts you need to know</em> (the <strong><em>threshold</em></strong>) to restore
+			You decide on <em>how many parts you need to know</em> (the <strong><em>threshold</em></strong>) to restore
 			the secret.
 		</li>
 	</ul>
