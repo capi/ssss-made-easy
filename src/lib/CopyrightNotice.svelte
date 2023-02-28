@@ -1,5 +1,5 @@
 <div class="my-3">
-	Copyright &copy; 2022 <a href="mailto:martin.carpella@gmx.net" class="underline">Martin Carpella</a>
+	Copyright &copy; 2022-2023 <a href="mailto:martin.carpella@gmx.net" class="underline">Martin Carpella</a>
 </div>
 <div class="my-1">
 	This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
