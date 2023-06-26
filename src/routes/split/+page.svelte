@@ -45,7 +45,7 @@
 	}
 </script>
 
-<PageTitle class="text-5xl font-bold leading-tight text-white">Split a secret</PageTitle>
+<PageTitle>Split a secret</PageTitle>
 
 <div class="text-white sm:w-96 w-3/4 mx-auto mt-6 flex flex-col text-left">
 	<div class="mb-6 p-5 bg-indigo-400 rounded-3xl">
