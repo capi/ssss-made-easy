@@ -1,4 +1,5 @@
-import { SSSS } from "ssss-js";
+import pkg from "ssss-js";
+const { SSSS } = pkg;
 
 export function splitSecret(secret: string, token: string, shares: number, threshold: number): string[] {
 	const s = new SSSS(threshold, shares, false);
