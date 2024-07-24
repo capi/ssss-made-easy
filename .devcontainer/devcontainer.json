@@ -38,5 +38,6 @@
 	"features": {
 		"git": "latest",
 		"docker-from-docker": "latest"
-	}
+	},
+	"runArgs": [ "--sysctl", "net.ipv6.conf.all.disable_ipv6=1" ]
 }
