@@ -1,4 +1,4 @@
-FROM node:20-bullseye as build
+FROM node:20-bookworm as build
 COPY . /src/
 SHELL ["/bin/bash", "-c"]
 ARG GIT_CLEAN="false"

@@ -108,6 +108,6 @@
 	</div>
 
 	{#if shares && shares.length > 0}
-		<SharesSection shares="{shares}" />
+		<SharesSection shares={shares} />
 	{/if}
 </div>
