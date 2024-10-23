@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let target = '';
-	export let title = '';
-	export let description = '';
+	interface Props {
+		target?: string;
+		title?: string;
+		description?: string;
+	}
+
+	let { target = '', title = '', description = '' }: Props = $props();
 </script>
 
 <label for={target}>

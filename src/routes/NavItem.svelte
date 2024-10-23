@@ -1,9 +1,16 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
   import { page } from '$app/stores';
   import { NavLi } from "flowbite-svelte";
 
-	export let href: string = "";
-  let active: boolean = false;
+	interface Props {
+		href?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { href = "", children }: Props = $props();
+  let active: boolean = $state(false);
 
 	function isActive(path: string, href: string) {
 		if (href == "/") {
@@ -11,8 +18,10 @@
 		}
 		return path.indexOf(href) == 0;
 	}
-	$: active = isActive($page.url.pathname, href);
+	run(() => {
+		active = isActive($page.url.pathname, href);
+	});
 
 </script>
 
-<NavLi {active} {href}><slot/></NavLi>
+<NavLi {active} {href}>{@render children?.()}</NavLi>

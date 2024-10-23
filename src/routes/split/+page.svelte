@@ -6,12 +6,12 @@
   import PageTitle from '$lib/PageTitle.svelte';
   import SharesSection from './SharesSection.svelte';
 
-	let secret: string = '';
-	let token: string = '';
-	let numShares: number = 5;
-	let threshold: number = 3;
-	let shares: string[] = [];
-	let validationMessages: string[] = [];
+	let secret: string = $state('');
+	let token: string = $state('');
+	let numShares: number = $state(5);
+	let threshold: number = $state(3);
+	let shares: string[] = $state([]);
+	let validationMessages: string[] = $state([]);
 
 	function getValidationMessages(): string[] {
 		let result: string[] = [];

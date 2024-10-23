@@ -3,6 +3,13 @@
 	import '../app.css';
 	import Footer from './Footer.svelte';
 	import NavBar from './NavBar.svelte';
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { children } = $props();
 </script>
 
 <svelte:head>
@@ -15,6 +22,6 @@
 >
 	<NavBar />
 	<div class="rounded-3xl bg-[#092540] md:px-20 sm:px-10 px-5 py-10 text-center">
-		<slot />
+		{@render children?.()}
 	</div>
 </div>

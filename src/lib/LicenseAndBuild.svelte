@@ -1,7 +1,11 @@
 <script lang="ts">
 	import version from '$lib/assets/version.txt?raw';
 
-	export let classNames = 'mt-3 text-sm leading-relaxed';
+	interface Props {
+		classNames?: string;
+	}
+
+	let { classNames = 'mt-3 text-sm leading-relaxed' }: Props = $props();
 </script>
 
 <!-- License Info -->

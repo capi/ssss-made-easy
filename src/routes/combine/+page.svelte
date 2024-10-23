@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { copyTextToClipboard } from '$lib/clipboard-utils';
 	import LabelWithDescription from '$lib/LabelWithDescription.svelte';
   import PageTitle from '$lib/PageTitle.svelte';
@@ -8,15 +10,17 @@
 	import { combineSecret } from '$lib/ssss-util';
 	import { errorToast, successToast } from '$lib/toasts/toasts';
 
-	let taShares: HTMLTextAreaElement;
-	let txtShares: string = '';
-	let shares: string[] = [];
-	let secret = '';
-	let warningMessages: string[] = [];
-	let errorMessages: string[] = [];
-	let showQrCodeScanner = false;
+	let taShares: HTMLTextAreaElement = $state();
+	let txtShares: string = $state('');
+	let shares: string[] = $state([]);
+	let secret = $state('');
+	let warningMessages: string[] = $state([]);
+	let errorMessages: string[] = $state([]);
+	let showQrCodeScanner = $state(false);
 
-	$: shares = txtShares.split('\n').filter((s) => s.trim().length > 0);
+	run(() => {
+		shares = txtShares.split('\n').filter((s) => s.trim().length > 0);
+	});
 
 	function onScanQrCode() {
 		showQrCodeScanner = true;
@@ -88,13 +92,13 @@
 		/>
 		<textarea
 			bind:this={taShares}
-			on:paste={onPaste}
+			onpaste={onPaste}
 			id="Shares"
 			rows="4"
 			class="block mt-2.5 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-mono whitespace-pre"
 			placeholder="Enter one key share per line..."
 			bind:value={txtShares}
-		/>
+		></textarea>
 	</div>
 
 	<div class="max-w-sm mt-2">

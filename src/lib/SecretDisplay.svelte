@@ -2,10 +2,14 @@
 	import { Button, Modal } from 'flowbite-svelte';
 	import QrCode from './QrCode.svelte';
 	import { successToast } from './toasts/toasts';
-	let showModal = false;
+	let showModal = $state(false);
 
-	export let secret = '';
-	let qrcode: QrCode;
+	interface Props {
+		secret?: string;
+	}
+
+	let { secret = '' }: Props = $props();
+	let qrcode: QrCode = $state();
 
 	function onShowQrCode() {
 		showModal = true;
@@ -24,7 +28,7 @@
 	<div class="sm:p-2 p-1 truncate font-mono text-ellipsis flex-grow select-all">
 		{secret}
 	</div>
-	<button class="sm:p-2 p-1 bg-blue-500" title="Show QR Code" on:click={onShowQrCode}>
+	<button class="sm:p-2 p-1 bg-blue-500" title="Show QR Code" onclick={onShowQrCode}>
 		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 			<path
 				stroke-linecap="round"
@@ -41,9 +45,11 @@
 			<QrCode bind:this={qrcode} value={secret} width={320} margin={1} cssClass="mx-auto" />
 			<div class="select-all font-mono">{secret}</div>
 		</div>
-		<svelte:fragment slot="footer">
-			<Button on:click={onCopyQrCodeToClipboard}>Copy QR-Code to clipboad</Button>
-			<Button color="alternative" on:click={() => (showModal = false)}>Close</Button>
-		</svelte:fragment>
+		{#snippet footer()}
+			
+				<Button on:click={onCopyQrCodeToClipboard}>Copy QR-Code to clipboad</Button>
+				<Button color="alternative" on:click={() => (showModal = false)}>Close</Button>
+			
+			{/snippet}
 	</Modal>
 {/if}

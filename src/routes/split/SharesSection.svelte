@@ -6,7 +6,11 @@
 	import SecretDisplay from '$lib/SecretDisplay.svelte';
 	import { copyTextToClipboard } from '$lib/clipboard-utils';
 
-	export let shares: string[] = [];
+	interface Props {
+		shares?: string[];
+	}
+
+	let { shares = [] }: Props = $props();
 
 	function copyAll() {
 		copyTextToClipboard(shares.join('\n'), (err) => {

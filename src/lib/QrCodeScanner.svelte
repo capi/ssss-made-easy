@@ -56,7 +56,7 @@
 		<div
 			class="fixed rounded-3xl inset-x-0 inset-y-0 m-auto sm:w-[512px] w-[360px] sm:h-[530px] h-[530px] bg-white text-black border border-solid flex flex-col items-center"
 		>
-			<div class="w-[320px] h-[430px] bg-slate-100 mt-3 mx-auto" id="qrcode-reader" />
+			<div class="w-[320px] h-[430px] bg-slate-100 mt-3 mx-auto" id="qrcode-reader"></div>
 			<Button class="absolute bottom-5 m-auto" on:click={close}>Close scanner</Button>
 		</div>
 	</div>

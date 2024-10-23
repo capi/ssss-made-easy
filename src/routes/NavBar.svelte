@@ -10,16 +10,18 @@
 	}
 </script>
 
-<Navbar let:hidden let:toggle>
-	<NavBrand href="/">
-		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"> SSSS-made-easy </span>
-	</NavBrand>
-	<NavHamburger on:click={toggle} />
-	<NavUl {hidden}>
-		<NavItem href="/">Home</NavItem>
-		<NavItem href="/split/">Split</NavItem>
-		<NavItem href="/combine/">Combine</NavItem>
-		<NavItem href="/about/">About</NavItem>
-		<NavItem href="/contact/">Contact</NavItem>
-	</NavUl>
+<Navbar  >
+	{#snippet children({ hidden, toggle })}
+		<NavBrand href="/">
+			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"> SSSS-made-easy </span>
+		</NavBrand>
+		<NavHamburger on:click={toggle} />
+		<NavUl {hidden}>
+			<NavItem href="/">Home</NavItem>
+			<NavItem href="/split/">Split</NavItem>
+			<NavItem href="/combine/">Combine</NavItem>
+			<NavItem href="/about/">About</NavItem>
+			<NavItem href="/contact/">Contact</NavItem>
+		</NavUl>
+	{/snippet}
 </Navbar>

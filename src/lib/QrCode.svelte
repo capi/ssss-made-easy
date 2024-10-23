@@ -1,16 +1,26 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
   import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 	import QRCode from 'qrcode';
   import { copyCanvasToClipboard } from './clipboard-utils';
 	import { errorToast } from './toasts/toasts';
-	let canvas: HTMLCanvasElement;
+	let canvas: HTMLCanvasElement = $state();
 
-	export let value = '';
-	export let cssClass = "";
-	export let width = 320;
-	export let margin = 4;
+	interface Props {
+		value?: string;
+		cssClass?: string;
+		width?: number;
+		margin?: number;
+	}
 
-	$: if (canvas) renderValue(value);
+	let {
+		value = '',
+		cssClass = "",
+		width = 320,
+		margin = 4
+	}: Props = $props();
+
 
 	function renderValue(value: string) {
 		QRCode.toCanvas(canvas, value, { width, margin, errorCorrectionLevel: "high" }, function (error) {
@@ -31,6 +41,9 @@
 		});
 		return result[0];
 	}
+	run(() => {
+		if (canvas) renderValue(value);
+	});
 </script>
 
-<canvas bind:this={canvas} class="{cssClass}" width="640" height="640" />
+<canvas bind:this={canvas} class="{cssClass}" width="640" height="640"></canvas>
